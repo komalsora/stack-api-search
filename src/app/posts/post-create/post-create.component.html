@@ -1,0 +1,9 @@
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+      <mat-form-field>
+        <input matInput #title="ngModel" type="text" name="title" ngModel required minlength="3" placeholder="Search Stack Exchange API"/>
+        <mat-error *ngIf="title.invalid">please enter a search title</mat-error>
+      </mat-form-field>
+      <button mat-raised-button type="submit" color="primary"> Search </button>
+  </form>
+</mat-card>

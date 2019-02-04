@@ -1,0 +1,23 @@
+<mat-accordion *ngIf="posts.length > 0">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header (click)="getAnswers(post.question_id)">
+      {{post.title}}
+    </mat-expansion-panel-header>
+    <div class="w-100">
+      <div class="w-50">
+        <div><span class="title">Score:</span> {{post.score}}</div>
+        <div><span class="title">Number of Views:</span> {{post.view_count}}</div>
+        <div><span class="title">Number of Answers:</span> {{post.answer_count}}</div>
+      </div>
+      <div class="w-50">
+        <div class="tags">Tags: <div *ngFor="let tag of post.tags">{{tag}}</div></div>
+      </div>
+    </div>
+    <div class="w-100">
+      <div *ngFor="let ans of answers" class="answers-cntnr">
+        <a [href]="post.link + '/'+ ans.answer_id + '#' + ans.answer_id" target="_blank">{{post.link + '/'+ ans.answer_id + '#' + ans.answer_id}}</a>
+        <span class="accepted" *ngIf="ans.is_accepted"> (Accepted Answer)</span>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
