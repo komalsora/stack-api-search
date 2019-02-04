@@ -10,6 +10,8 @@ A simple search application to query the Stack exchange API is developed using A
 <hr>
 <br>
 
+Screenshot
+<img href="https://github.com/komalsora/stack-api-search/blob/master/src/assets/screenshot.PNG">
 
 Generate the project using Angular CLI <br>
 
